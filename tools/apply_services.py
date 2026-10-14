@@ -65,7 +65,7 @@ d=open(p,encoding='utf-8').read()
 i=d.index('<ul class="chips"'); j=d.index('<div class="need">',i)
 new='<ul class="chips" aria-label="Jump to a service group">\n'+'\n'.join(chips)+'\n      </ul>\n\n      <div style="margin-top:36px">\n'+''.join(out)+'      </div>\n\n      '
 d=d[:i]+new+d[j:]
-d=d.replace('Service titles follow those published on begasenergy.com. Please confirm the detailed scope, typical applications and delivery approach for each service, and which services are delivered directly or through partners, so the pages can be completed accurately.','Service descriptions follow the content supplied from the current begasenergy.com Services page. Please confirm each listed activity is delivered by BEGAS, directly or through partners, before launch.')
+d=d.replace('Service titles follow those published on begasenergy.com. Please confirm the detailed scope, typical applications and delivery approach for each service, and which services are delivered directly or through partners, so the pages can be completed accurately.','Service descriptions follow the content supplied from the current begasenergy.com Services page. 
 # home tiles
 descs=['Control systems, instrumentation and the transport and installation of offshore facilities.','Onshore fabrication and commissioning of specialist electrical, HVAC and instrumentation systems.','Offshore construction, with maintenance and repair of offshore facilities.','Electrical engineering and maintenance, and electrical construction work.','Maintenance, calibration and diagnostics for field instrumentation.','Marine transportation and support services, and vessel cleaning.']
 ti=d.index('<div class="tiles">'); tj=d.index('</div>',ti)
