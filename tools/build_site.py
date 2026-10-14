@@ -21,7 +21,7 @@ meta={
 'privacy':('Privacy Policy | BEGAS Energy Sdn Bhd','How BEGAS Energy Sdn Bhd handles personal data shared through this website.'),
 'hse':('HSE & Quality | BEGAS Energy Sdn Bhd','Safety in every task. Quality in every delivery. BEGAS Energy health, safety, environment and quality commitments.'),
 'experience':('Experience | BEGAS Energy Sdn Bhd','Project experience and case studies from BEGAS Energy Sdn Bhd.'),
-'contact':('Contact Us | BEGAS Energy Sdn Bhd','Contact BEGAS Energy Sdn Bhd, KK Times Square, Kota Kinabalu. Tel +6088-486 262, info@begasenergy.com.'),
+'contact':('Contact Us | BEGAS Energy Sdn Bhd','Contact BEGAS Energy Sdn Bhd, KK Times Square, Kota Kinabalu. Email admin@begasenergy.com.'),
 }
 # extract page sections
 pages={}
@@ -39,7 +39,7 @@ contact_form='''
     <h2 id="ct-h2" style="margin-bottom:36px">Send us your enquiry.</h2>
     <div class="sent" id="form-sent" role="status" tabindex="-1" hidden>
       <h3>Thank you. Your enquiry has been sent.</h3>
-      <p>The BEGAS team will respond as soon as possible. For anything urgent, call +6088-486 262.</p>
+      <p>The BEGAS team will respond as soon as possible. For anything urgent, email admin@begasenergy.com.</p>
       <button class="btn btn-dark" type="button" id="form-again">Send another enquiry</button>
     </div>
     <form class="form" id="enquiry" name="enquiry" method="POST" action="/contact" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
@@ -53,7 +53,7 @@ contact_form='''
       <div class="field full"><label for="message">Your requirement <small>(required)</small></label><textarea id="message" name="message" aria-describedby="message-err"></textarea><span class="err" id="message-err" hidden></span></div>
       <p class="hp" aria-hidden="true"><label>Do not fill this in: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
       <div class="field full"><label class="check" for="consent"><input type="checkbox" id="consent" name="consent" aria-describedby="consent-err"><span>I agree that BEGAS Energy may contact me about this enquiry and store the details I provide for that purpose, as described in the <a href="/privacy-policy" data-go="privacy" style="text-decoration:underline">Privacy Policy</a>.</span></label><span class="err" id="consent-err" hidden></span></div>
-      <div class="field full" style="flex-direction:row;align-items:center;gap:18px;flex-wrap:wrap"><button class="btn btn-dark" type="submit">Send Enquiry</button><span style="font-size:14px;color:#44596B">Or email <a href="mailto:info@begasenergy.com" style="font-weight:700;color:#071B2B;border-bottom:2px solid #F5A623">info@begasenergy.com</a></span></div>
+      <div class="field full" style="flex-direction:row;align-items:center;gap:18px;flex-wrap:wrap"><button class="btn btn-dark" type="submit">Send Enquiry</button><span style="font-size:14px;color:#44596B">Or email <a href="mailto:admin@begasenergy.com" style="font-weight:700;color:#071B2B;border-bottom:2px solid #F5A623">admin@begasenergy.com</a></span></div>
     </form>
   </div>
 '''
@@ -94,7 +94,7 @@ main:focus{outline:none}
 '''
 css=css+extra_css
 
-ld=json.dumps({"@context":"https://schema.org","@type":"Organization","name":"BEGAS Energy Sdn Bhd","url":"https://begasenergy.com/","logo":"https://begasenergy.com/assets/begas-logo.png","foundingDate":"2008-09-04","email":"info@begasenergy.com","telephone":"+6088486262","address":{"@type":"PostalAddress","streetAddress":"I-49-3A, Signature Office, KK Times Square, Off Coastal Highway, Jalan Coastal","addressLocality":"Kota Kinabalu","addressRegion":"Sabah","postalCode":"88100","addressCountry":"MY"}},indent=1)
+ld=json.dumps({"@context":"https://schema.org","@type":"Organization","name":"BEGAS Energy Sdn Bhd","url":"https://begasenergy.com/","logo":"https://begasenergy.com/assets/begas-logo.png","foundingDate":"2008-09-04","email":"admin@begasenergy.com","address":{"@type":"PostalAddress","streetAddress":"I-49-3A, Signature Office, KK Times Square, Off Coastal Highway, Jalan Coastal","addressLocality":"Kota Kinabalu","addressRegion":"Sabah","postalCode":"88100","addressCountry":"MY"}},indent=1)
 
 js=open(os.path.join(os.path.dirname(__file__),'site.js')).read()
 SITE='https://begasenergy.com'

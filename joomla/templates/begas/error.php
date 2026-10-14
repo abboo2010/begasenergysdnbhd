@@ -10,6 +10,6 @@ $root = Uri::root(true) ?: '/';
 <body class="site"><main class="wrap content" style="padding:120px 32px">
 <p class="eyebrow">Error <?php echo (int) $this->error->getCode(); ?></p>
 <h1><?php echo (int) $this->error->getCode() === 404 ? 'This page could not be found.' : 'Something went wrong.'; ?></h1>
-<p>Please return to the home page or contact us on +6088-486 262.</p>
+<p>Please return to the home page or email admin@begasenergy.com.</p>
 <p><a class="btn btn-dark" href="<?php echo $root; ?>">Back to home</a></p>
 </main></body></html>
