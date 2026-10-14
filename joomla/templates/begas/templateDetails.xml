@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="template" client="site" method="upgrade">
+    <name>begas</name>
+    <creationDate>2026-10</creationDate>
+    <author>Click 4 Tech Solutions PLT</author>
+    <authorEmail>abboo2010@gmail.com</authorEmail>
+    <copyright>BEGAS Energy Sdn Bhd</copyright>
+    <version>0.1.0</version>
+    <description>BEGAS Energy template for Joomla 4/5. Content stays editable in the Joomla admin.</description>
+    <inheritable>1</inheritable>
+    <files>
+        <filename>index.php</filename>
+        <filename>error.php</filename>
+        <filename>joomla.asset.json</filename>
+        <folder>css</folder>
+        <folder>images</folder>
+        <folder>favicon</folder>
+    </files>
+    <positions>
+        <position>topbar</position>
+        <position>menu</position>
+        <position>banner</position>
+        <position>breadcrumbs</position>
+        <position>main-top</position>
+        <position>main-bottom</position>
+        <position>cta</position>
+        <position>footer-1</position>
+        <position>footer-2</position>
+        <position>footer-3</position>
+        <position>footer-4</position>
+        <position>footer-bar</position>
+    </positions>
+    <config>
+        <fields name="params">
+            <fieldset name="advanced">
+                <field name="brandName" type="text" default="BEGAS" label="Brand name" />
+                <field name="brandTag" type="text" default="ENERGY SDN BHD" label="Brand sub-line" />
+                <field name="ctaText" type="text" default="Request an Enquiry" label="Header button text" />
+                <field name="ctaLink" type="text" default="/index.php/contact-us" label="Header button link" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

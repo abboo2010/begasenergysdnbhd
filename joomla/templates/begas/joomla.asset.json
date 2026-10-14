@@ -1,0 +1,9 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "begas",
+  "version": "0.1.0",
+  "assets": [
+    { "name": "template.begas.fonts", "type": "style", "uri": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" },
+    { "name": "template.begas", "type": "style", "uri": "css/template.css", "dependencies": ["template.begas.fonts"] }
+  ]
+}
