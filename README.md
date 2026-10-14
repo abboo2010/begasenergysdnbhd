@@ -1,16 +1,14 @@
 # BEGAS Energy Sdn Bhd: website redesign
 
-Design source for the redesign of begasenergy.com (Joomla).
+- `site/`: the static website (deploy this folder; `netlify.toml` already sets `publish = "site"`)
+- `design/`: the design source file
+- `assets/`: logo (transparent) and favicons
+- `joomla/`: early Joomla template skeleton, parked for now
+- `tools/`: script that regenerates `site/` from the design
 
-- `design/`: single-file design (all pages: Home, About, Services, Onshore, Offshore, HSE & Quality, Experience, Contact)
-- `assets/`: logo (transparent background) and favicon set
+## Deploying
+Netlify: connect this repo, no build command needed. The enquiry form uses Netlify Forms (honeypot spam protection); enable form notifications to info@begasenergy.com in the Netlify dashboard.
+Each page also exists as its own folder (`/about/`, `/services/` ...), so it can be copied to any host, including cloudaccess.net, but the form then needs a different handler.
 
 ## Information still required from BEGAS
-- Vector / high-resolution logo
-- Approved site and project photographs
-- Confirmation of services beyond those published
-- Certifications and HSE documentation
-- Approval for project case studies and team details, including portraits
-- Privacy policy text
-
-No certifications, clients or statistics are shown unless verified.
+Vector logo, approved photographs, confirmation of services beyond those published, certifications and HSE documents, approval for case studies and team details, privacy policy text. No certifications, clients or statistics are shown unless verified.
