@@ -42,7 +42,7 @@ a{color:inherit;text-decoration:none}
 .brand-txt{display:flex;flex-direction:column;line-height:1}
 .brand b{font-size:22px;font-weight:800;letter-spacing:.14em}
 .brand span{font-size:10px;font-weight:600;letter-spacing:.3em;color:#F5A623;margin-top:5px;white-space:nowrap}
-.nav-links{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:600;color:#D5E0E8}
+.nav-links{display:flex;align-items:center;gap:18px;white-space:nowrap;font-size:14px;font-weight:600;color:#D5E0E8}
 .nav-links a{padding:8px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
 .nav-links a:hover,.nav-links a.on{color:#fff;border-bottom-color:#F5A623}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 26px;font-weight:700;font-size:15px;background:#F5A623;color:#071B2B;border:2px solid #F5A623;cursor:pointer;font-family:inherit;transition:background .2s,transform .2s}
@@ -56,7 +56,7 @@ a{color:inherit;text-decoration:none}
 .mpanel{background:#071B2B;border-top:1px solid rgba(255,255,255,.08);padding:8px 20px 28px}
 .mpanel a.ml{display:flex;align-items:center;min-height:50px;font-weight:600;color:#E6EEF3;border-bottom:1px solid rgba(255,255,255,.08)}
 .mpanel a.ml.on{color:#F5A623}
-@media (max-width:1180px){.nav-links,.nav-cta{display:none}.burger{display:inline-flex}}
+@media (max-width:1360px){.nav-links,.nav-cta{display:none}.burger{display:inline-flex}}
 
 /* shared type */
 .eyebrow{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#315B72}
@@ -671,11 +671,6 @@ a{color:inherit;text-decoration:none}
         <div class="gcard"><h3>Electrical &amp; instrumentation</h3><ul><li>Electrical engineering and maintenance</li><li>Electrical construction work</li><li>Switchboard and panel fabrication, installation and commissioning</li><li>PLC-based systems: maintenance and troubleshooting</li><li>Field instrumentation maintenance</li></ul></div>
         <div class="gcard"><h3>Mechanical &amp; HVAC</h3><ul><li>HVAC operation and maintenance</li><li>Ducting fabrication and installation</li><li>Ducting cleaning and indoor air quality assessment</li><li>Valves maintenance services</li><li>Commissioning of specialist electrical, HVAC and instrumentation systems</li></ul></div>
       </div>
-      <div class="need">
-        <small>Information required</small>
-        <h3>Onshore project types and safety considerations</h3>
-        <p>Please confirm the onshore facilities BEGAS typically supports and the safety and operational practices that apply, so this page can describe them accurately.</p>
-      </div>
     </div>
   </section>
   <section class="cta" aria-labelledby="on-cta">
@@ -708,17 +703,73 @@ a{color:inherit;text-decoration:none}
         <div class="gcard off"><h3>Marine, transport &amp; communications</h3><ul><li>Marine transportation and support services</li><li>Vessel cleaning services</li><li>VSAT data transmission: troubleshooting and maintenance</li></ul></div>
         <div class="gcard off"><h3>Workforce support</h3><ul><li>Manpower supply, skilled and non-skilled</li></ul></div>
       </div>
-      <div class="need">
-        <small>Information required</small>
-        <h3>Offshore scope, delivery model and safety considerations</h3>
-        <p>Please confirm which offshore services BEGAS delivers directly or with partners, and the safety and operational considerations to publish. No unverified offshore capability is shown.</p>
-      </div>
     </div>
   </section>
   <section class="cta" aria-labelledby="off-cta">
     <div class="wrap cta-in">
       <div><div class="eyebrow">Offshore enquiries</div><h2 id="off-cta">Discuss your offshore requirements.</h2></div>
       <div class="cta-row"><a class="btn" href="#" onClick="{{g.contact}}">Request an Enquiry</a><a class="btn btn-ghost" href="#" onClick="{{g.onshore}}">See Onshore Capabilities</a></div>
+    </div>
+  </section>
+</div>
+</sc-if>
+
+<!-- ================= MANPOWER ================= -->
+<sc-if value="{{show.manpower}}" hint-placeholder-val="{{false}}">
+<div class="{{cls.manpower}}">
+  <section class="phero" aria-labelledby="mp-h1">
+    <div class="phero-grid" aria-hidden="true"></div>
+    <div class="wrap"><div class="phero-in">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#" onClick="{{g.home}}">Home</a><span aria-hidden="true">/</span><b>Manpower Outsourcing</b></nav>
+      <h1 id="mp-h1">Manpower Outsourcing</h1>
+      <p class="lead">Professional and support services, technical or non-technical.</p>
+    </div></div>
+  </section>
+
+  <section class="sec" aria-labelledby="mp-h2">
+    <div class="wrap about">
+      <div>
+        <div class="eyebrow">Expert consultation and advisory</div>
+        <h2 id="mp-h2">Count on BEGAS Energy as your reliable ally.</h2>
+        <p>Count on BEGAS Energy Sdn Bhd as your reliable ally, providing expert consultation and advisory services in the realms of manpower outsourcing. Our comprehensive offerings encompass professional and support services, catering to both technical and non-technical requirements.</p>
+        <p>Our expertise extends across diverse industries, with a specialised focus on serving Oil and Gas Majors in both upstream and downstream sectors. The acknowledgment and positive feedback from our esteemed long-term clients underscore our commitment to excellence.</p>
+      </div>
+      <div class="grp" style="grid-template-columns:1fr;margin-top:0">
+        <div class="gcard"><h3>Professional and support services</h3><ul><li>Expert consultation and advisory services in manpower outsourcing</li><li>Professional services</li><li>Support services</li></ul></div>
+        <div class="gcard off"><h3>Technical or non-technical</h3><ul><li>Technical requirements</li><li>Non-technical requirements</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec dark" aria-labelledby="mp-h3">
+    <div class="wrap">
+      <div class="eyebrow">Industries we serve</div>
+      <h2 id="mp-h3">Focused on Oil and Gas Majors, upstream and downstream.</h2>
+      <div class="adv">
+        <div><h3>Upstream</h3><p>Manpower outsourcing for Oil and Gas Majors in the upstream sector.</p></div>
+        <div><h3>Downstream</h3><p>Manpower outsourcing for Oil and Gas Majors in the downstream sector.</p></div>
+        <div><h3>Long-term clients</h3><p>The acknowledgment and positive feedback from our esteemed long-term clients underscore our commitment to excellence.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-grey" aria-labelledby="mp-h4">
+    <div class="wrap">
+      <div class="eyebrow">Why choose BEGAS Energy</div>
+      <h2 id="mp-h4">Streamline your workforce management.</h2>
+      <p class="sub">Our dedication to being the most dependable manpower agency in Malaysia means we prioritise your business's productivity.</p>
+      <div class="pillars" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+        <div class="pillar"><i>01</i><h3>Streamlined workforce</h3><p>Streamline your workforce management with a dependable manpower partner.</p></div>
+        <div class="pillar"><i>02</i><h3>Productivity first</h3><p>We prioritise your business's productivity.</p></div>
+        <div class="pillar"><i>03</i><h3>Savings</h3><p>Significant savings in time, energy and costs associated with recruitment and personnel management.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" aria-labelledby="mp-cta">
+    <div class="wrap cta-in">
+      <div><div class="eyebrow">Manpower enquiries</div><h2 id="mp-cta">Discuss your manpower requirements.</h2></div>
+      <div class="cta-row"><a class="btn" href="#" onClick="{{g.contact}}">Request an Enquiry</a><a class="btn btn-ghost" href="tel:+6088486262">Call +6088-486 262</a></div>
     </div>
   </section>
 </div>
@@ -960,10 +1011,10 @@ a{color:inherit;text-decoration:none}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.order = ['home', 'about', 'services', 'onshore', 'offshore', 'hse', 'experience', 'contact'];
+    this.order = ['home', 'about', 'services', 'onshore', 'offshore', 'manpower', 'hse', 'experience', 'contact'];
     this.labels = {
       home: 'Home', about: 'About Us', services: 'Services', onshore: 'Onshore',
-      offshore: 'Offshore', hse: 'HSE & Quality', experience: 'Experience', contact: 'Contact Us'
+      offshore: 'Offshore', manpower: 'Manpower Outsourcing', hse: 'HSE & Quality', experience: 'Experience', contact: 'Contact Us'
     };
     this.state = { page: 'home', leaving: null, dir: 'next', menuOpen: false, errors: {}, sent: false };
     this.timer = null;

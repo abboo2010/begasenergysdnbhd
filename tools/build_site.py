@@ -4,15 +4,17 @@ src=open(R+'/design/Main.dc.html').read()
 css=re.search(r'<style>(.*?)</style>',src,re.S).group(1)
 body=src[src.index('<div id="top">'):src.index('</x-dc>')]
 
-order=['home','about','services','onshore','offshore','hse','experience','contact']
-labels={'home':'Home','about':'About Us','services':'Services','onshore':'Onshore','offshore':'Offshore','hse':'HSE & Quality','experience':'Experience','contact':'Contact Us'}
+order=['home','about','services','onshore','offshore','manpower','hse','experience','contact']
+labels={'home':'Home','about':'About Us','services':'Services','onshore':'Onshore','offshore':'Offshore','manpower':'Manpower Outsourcing','hse':'HSE & Quality','experience':'Experience','contact':'Contact Us'}
 paths={p:('/' if p=='home' else '/'+p) for p in order}
+paths['manpower']='/manpower-outsourcing'
 meta={
 'home':('BEGAS Energy Sdn Bhd | Oil & Gas Engineering and Maintenance, Kota Kinabalu','Civil, mechanical and electrical engineering and maintenance services for the oil and gas industry, onshore and offshore. Based in Kota Kinabalu, Sabah.'),
 'about':('About Us | BEGAS Energy Sdn Bhd','BEGAS Energy Sdn Bhd was incorporated in Kota Kinabalu in 2008. Meet the leadership and team behind our oil and gas maintenance services.'),
 'services':('Services | BEGAS Energy Sdn Bhd','Six capability groups: offshore engineering, onshore fabrication and civil works, electrical and instrumentation, mechanical, marine support and pipeline solutions.'),
 'onshore':('Onshore Capabilities | BEGAS Energy Sdn Bhd','Onshore fabrication, civil, electrical, instrumentation and HVAC maintenance for industrial facilities in Sabah.'),
 'offshore':('Offshore Capabilities | BEGAS Energy Sdn Bhd','Offshore construction, maintenance, marine support and manpower services for oil and gas operations.'),
+'manpower':('Manpower Outsourcing | BEGAS Energy Sdn Bhd','Manpower outsourcing for the oil and gas industry: professional and support services, technical or non-technical, from BEGAS Energy Sdn Bhd.'),
 'hse':('HSE & Quality | BEGAS Energy Sdn Bhd','Safety in every task. Quality in every delivery. BEGAS Energy health, safety, environment and quality commitments.'),
 'experience':('Experience | BEGAS Energy Sdn Bhd','Project experience and case studies from BEGAS Energy Sdn Bhd.'),
 'contact':('Contact Us | BEGAS Energy Sdn Bhd','Contact BEGAS Energy Sdn Bhd, KK Times Square, Kota Kinabalu. Tel +6088-486 262, info@begasenergy.com.'),
@@ -142,7 +144,7 @@ open(S+'/assets/site.js','w').write(js)
 meta_js='window.BEGAS_META='+json.dumps({paths[p]:{'p':p,'t':meta[p][0],'d':meta[p][1]} for p in order})+';\n'
 open(S+'/assets/site.js','w').write(meta_js+js)
 for p in order:
-    d=S if p=='home' else S+'/'+p
+    d=S if p=='home' else S+paths[p]
     os.makedirs(d,exist_ok=True)
     open(d+'/index.html','w').write(page_html(p))
 open(S+'/robots.txt','w').write('User-agent: *\nAllow: /\nSitemap: %s/sitemap.xml\n'%SITE)
