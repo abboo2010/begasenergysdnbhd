@@ -239,6 +239,15 @@ a{color:inherit;text-decoration:none}
 .gcard ul.cols{columns:2;column-gap:36px}
 .gcard ul.cols li{break-inside:avoid}
 @media (max-width:620px){.gcard ul.cols{columns:1}}
+
+.prose{max-width:780px;font-size:17px;line-height:1.7;color:#2B4153}
+.prose h2{margin:44px 0 12px;font-size:24px;line-height:1.2;font-weight:800;letter-spacing:-.015em;color:#071B2B}
+.prose p{margin:0 0 16px}
+.prose ul{margin:0 0 16px;padding-left:22px}
+.prose li{margin:0 0 6px}
+.prose a{color:#123B56;text-decoration:underline;text-underline-offset:3px}
+.foot-bar a{color:#B5C7D4;text-decoration:underline;text-underline-offset:3px}
+.foot-bar a:hover{color:#fff}
 /* hse */
 .hse-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:52px}
 .hcard{padding:30px 28px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-top:3px solid #315B72}
@@ -784,6 +793,71 @@ a{color:inherit;text-decoration:none}
 </div>
 </sc-if>
 
+<!-- ================= PRIVACY ================= -->
+<sc-if value="{{show.privacy}}" hint-placeholder-val="{{false}}">
+<div class="{{cls.privacy}}">
+  <section class="phero" aria-labelledby="pv-h1">
+    <div class="phero-grid" aria-hidden="true"></div>
+    <div class="wrap"><div class="phero-in">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#" onClick="{{g.home}}">Home</a><span aria-hidden="true">/</span><b>Privacy Policy</b></nav>
+      <h1 id="pv-h1">Privacy Policy</h1>
+      <p class="lead">How BEGAS Energy Sdn Bhd handles the personal data you share through this website.</p>
+    </div></div>
+  </section>
+  <section class="sec" aria-label="Privacy policy text">
+    <div class="wrap">
+      <div class="prose">
+        <p><em>Last updated: October 2026.</em></p>
+
+        <h2>1. Who we are</h2>
+        <p>This website is operated by BEGAS Energy Sdn Bhd (company no. 548062), I-49-3A, Signature Office, KK Times Square, Off Coastal Highway, Jalan Coastal, 88100 Kota Kinabalu, Sabah, Malaysia. In this policy, "we" and "us" mean BEGAS Energy Sdn Bhd. We handle personal data in line with the Personal Data Protection Act 2010 of Malaysia.</p>
+
+        <h2>2. What personal data we collect</h2>
+        <p>We collect personal data only when you send us an enquiry through the contact form or contact us directly. This may include:</p>
+        <ul>
+          <li>your name and company;</li>
+          <li>your email address and telephone number;</li>
+          <li>the service you are interested in;</li>
+          <li>the message you write to us; and</li>
+          <li>your confirmation that we may contact you about your enquiry.</li>
+        </ul>
+        <p>Please do not include sensitive personal data, such as health or financial account details, in your message.</p>
+
+        <h2>3. How we use it</h2>
+        <p>We use the details you provide to read and respond to your enquiry, to discuss the services you ask about, and to keep a record of that conversation. The contact form asks for your agreement to this before you send it.</p>
+
+        <h2>4. Who we share it with</h2>
+        <p>We do not sell your personal data. Enquiries pass through the service providers that host this website and process form submissions on our behalf. Those providers may store data on servers outside Malaysia. We may also disclose personal data where the law requires it.</p>
+
+        <h2>5. Cookies and third-party services</h2>
+        <p>This website does not set advertising or tracking cookies. When you open a page, your browser requests fonts from Google Fonts, which means Google receives your IP address. If you follow the link to Google Maps, Google's own terms and privacy policy apply from that point.</p>
+
+        <h2>6. How long we keep it</h2>
+        <p>We keep enquiry details only for as long as we need them to deal with your enquiry and for our business records.</p>
+
+        <h2>7. Keeping it secure</h2>
+        <p>We take reasonable steps to protect personal data from loss, misuse and unauthorised access. No method of sending data over the internet is completely secure, so we cannot guarantee absolute security.</p>
+
+        <h2>8. Your rights</h2>
+        <p>You may ask us to confirm whether we hold personal data about you, to give you a copy, to correct it, or to stop using it for your enquiry. You may also withdraw your consent at any time. To make a request, email <a href="mailto:info@begasenergy.com">info@begasenergy.com</a> or call <a href="tel:+6088486262">+6088-486 262</a>.</p>
+
+        <h2>9. Changes to this policy</h2>
+        <p>We may update this policy from time to time. The date at the top shows when it was last changed.</p>
+
+        <h2>10. Contact us</h2>
+        <p>Questions about this policy can be sent to <a href="mailto:info@begasenergy.com">info@begasenergy.com</a>.</p>
+
+        <div class="need">
+          <small>Information required</small>
+          <h3>For BEGAS to confirm before launch</h3>
+          <p>This policy was drafted from how the website works today. Please confirm the retention period, the person or department that handles data requests, and any use of enquiry details beyond answering the enquiry. It should also be reviewed by BEGAS's legal adviser before it is published.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</sc-if>
+
 <!-- ================= HSE ================= -->
 <sc-if value="{{show.hse}}" hint-placeholder-val="{{false}}">
 <div class="{{cls.hse}}">
@@ -1010,7 +1084,7 @@ a{color:inherit;text-decoration:none}
     </div>
     <div class="foot-bar">
       <span>© 2026 BEGAS Energy Sdn Bhd. All rights reserved.</span>
-      <span>Privacy policy: page to be written</span>
+      <a href="#" onClick="{{g.privacy}}">Privacy policy</a>
     </div>
   </div>
 </footer>
@@ -1020,10 +1094,10 @@ a{color:inherit;text-decoration:none}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.order = ['home', 'about', 'services', 'onshore', 'offshore', 'manpower', 'hse', 'experience', 'contact'];
+    this.order = ['home', 'about', 'services', 'onshore', 'offshore', 'manpower', 'hse', 'experience', 'contact', 'privacy'];
     this.labels = {
       home: 'Home', about: 'About Us', services: 'Services', onshore: 'Onshore',
-      offshore: 'Offshore', manpower: 'Manpower Outsourcing', hse: 'HSE & Quality', experience: 'Experience', contact: 'Contact Us'
+      offshore: 'Offshore', manpower: 'Manpower Outsourcing', hse: 'HSE & Quality', experience: 'Experience', contact: 'Contact Us', privacy: 'Privacy Policy'
     };
     this.state = { page: 'home', leaving: null, dir: 'next', menuOpen: false, errors: {}, sent: false };
     this.timer = null;

@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  var order = ['home', 'about', 'services', 'onshore', 'offshore', 'manpower', 'hse', 'experience', 'contact'];
+  var order = ['home', 'about', 'services', 'onshore', 'offshore', 'manpower', 'hse', 'experience', 'contact', 'privacy'];
   var META = window.BEGAS_META || {};
   var main = document.getElementById('main');
   var panels = {};
@@ -11,7 +11,7 @@
   var mpanel = document.getElementById('mobile-menu');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function pathFor(p) { return p === 'home' ? '/' : p === 'manpower' ? '/manpower-outsourcing' : '/' + p; }
+  function pathFor(p) { return p === 'home' ? '/' : p === 'manpower' ? '/manpower-outsourcing' : p === 'privacy' ? '/privacy-policy' : '/' + p; }
   function pageFor(path) {
     path = path.replace(/\/index\.html$/, '').replace(/\/+$/, '') || '/';
     var m = META[path];

@@ -8,6 +8,9 @@ order=['home','about','services','onshore','offshore','manpower','hse','experien
 labels={'home':'Home','about':'About Us','services':'Services','onshore':'Onshore','offshore':'Offshore','manpower':'Manpower Outsourcing','hse':'HSE & Quality','experience':'Experience','contact':'Contact Us'}
 paths={p:('/' if p=='home' else '/'+p) for p in order}
 paths['manpower']='/manpower-outsourcing'
+labels['privacy']='Privacy Policy'
+paths['privacy']='/privacy-policy'
+allpages=order+['privacy']
 meta={
 'home':('BEGAS Energy Sdn Bhd | Oil & Gas Engineering and Maintenance, Kota Kinabalu','Civil, mechanical and electrical engineering and maintenance services for the oil and gas industry, onshore and offshore. Based in Kota Kinabalu, Sabah.'),
 'about':('About Us | BEGAS Energy Sdn Bhd','BEGAS Energy Sdn Bhd was incorporated in Kota Kinabalu in 2008. Meet the leadership and team behind our oil and gas maintenance services.'),
@@ -15,6 +18,7 @@ meta={
 'onshore':('Onshore Capabilities | BEGAS Energy Sdn Bhd','Onshore fabrication, civil, electrical, instrumentation and HVAC maintenance for industrial facilities in Sabah.'),
 'offshore':('Offshore Capabilities | BEGAS Energy Sdn Bhd','Offshore construction, maintenance, marine support and manpower services for oil and gas operations.'),
 'manpower':('Manpower Outsourcing | BEGAS Energy Sdn Bhd','Manpower outsourcing for the oil and gas industry: professional and support services, technical or non-technical, from BEGAS Energy Sdn Bhd.'),
+'privacy':('Privacy Policy | BEGAS Energy Sdn Bhd','How BEGAS Energy Sdn Bhd handles personal data shared through this website.'),
 'hse':('HSE & Quality | BEGAS Energy Sdn Bhd','Safety in every task. Quality in every delivery. BEGAS Energy health, safety, environment and quality commitments.'),
 'experience':('Experience | BEGAS Energy Sdn Bhd','Project experience and case studies from BEGAS Energy Sdn Bhd.'),
 'contact':('Contact Us | BEGAS Energy Sdn Bhd','Contact BEGAS Energy Sdn Bhd, KK Times Square, Kota Kinabalu. Tel +6088-486 262, info@begasenergy.com.'),
@@ -23,7 +27,7 @@ meta={
 pages={}
 for m in re.finditer(r'<sc-if value="\{\{show\.(\w+)\}\}"[^>]*>\s*<div class="\{\{cls\.\w+\}\}">(.*?)\n</div>\n</sc-if>',body,re.S):
     pages[m.group(1)]=m.group(2)
-assert set(pages)==set(order),set(order)-set(pages)
+assert set(pages)==set(order+['privacy']),set(order+['privacy'])^set(pages)
 
 def conv(h):
     h=re.sub(r'<a ([^>]*?)href="#" onClick="\{\{g\.(\w+)\}\}"',lambda m:'<a %sdata-go="%s" href="%s"'%(m.group(1),m.group(2),paths[m.group(2)]),h)
@@ -48,7 +52,7 @@ contact_form='''
         <select id="service" name="service"><option value="">Select a service group</option><option>Instrumentation &amp; Offshore Installation</option><option>Onshore Fabrication &amp; Specialist Commissioning</option><option>Offshore Construction, Maintenance &amp; Repairs</option><option>Electrical Engineering &amp; Construction</option><option>Field Instrumentation Maintenance</option><option>Marine Transportation &amp; Vessel Cleaning</option><option>Other or not sure</option></select></div>
       <div class="field full"><label for="message">Your requirement <small>(required)</small></label><textarea id="message" name="message" aria-describedby="message-err"></textarea><span class="err" id="message-err" hidden></span></div>
       <p class="hp" aria-hidden="true"><label>Do not fill this in: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-      <div class="field full"><label class="check" for="consent"><input type="checkbox" id="consent" name="consent" aria-describedby="consent-err"><span>I agree that BEGAS Energy may contact me about this enquiry and store the details I provide for that purpose.</span></label><span class="err" id="consent-err" hidden></span></div>
+      <div class="field full"><label class="check" for="consent"><input type="checkbox" id="consent" name="consent" aria-describedby="consent-err"><span>I agree that BEGAS Energy may contact me about this enquiry and store the details I provide for that purpose, as described in the <a href="/privacy-policy" data-go="privacy" style="text-decoration:underline">Privacy Policy</a>.</span></label><span class="err" id="consent-err" hidden></span></div>
       <div class="field full" style="flex-direction:row;align-items:center;gap:18px;flex-wrap:wrap"><button class="btn btn-dark" type="submit">Send Enquiry</button><span style="font-size:14px;color:#44596B">Or email <a href="mailto:info@begasenergy.com" style="font-weight:700;color:#071B2B;border-bottom:2px solid #F5A623">info@begasenergy.com</a></span></div>
     </form>
   </div>
@@ -97,7 +101,7 @@ SITE='https://begasenergy.com'
 def page_html(active):
     t,d=meta[active]
     panels=''
-    for p in order:
+    for p in allpages:
         inner=conv(pages[p])
         inner=re.sub(r'<sc-for.*?</sc-for>','',inner,flags=re.S)
         hid='' if p==active else ' hidden'
@@ -141,14 +145,14 @@ shutil.copy(R+'/assets/begas-logo.png',S+'/assets/')
 for f in os.listdir(R+'/assets/favicon'): shutil.copy(R+'/assets/favicon/'+f,S+'/'+f)
 open(S+'/assets/site.css','w').write(css)
 open(S+'/assets/site.js','w').write(js)
-meta_js='window.BEGAS_META='+json.dumps({paths[p]:{'p':p,'t':meta[p][0],'d':meta[p][1]} for p in order})+';\n'
+meta_js='window.BEGAS_META='+json.dumps({paths[p]:{'p':p,'t':meta[p][0],'d':meta[p][1]} for p in allpages})+';\n'
 open(S+'/assets/site.js','w').write(meta_js+js)
-for p in order:
+for p in allpages:
     d=S if p=='home' else S+paths[p]
     os.makedirs(d,exist_ok=True)
     open(d+'/index.html','w').write(page_html(p))
 open(S+'/robots.txt','w').write('User-agent: *\nAllow: /\nSitemap: %s/sitemap.xml\n'%SITE)
-open(S+'/sitemap.xml','w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join('<url><loc>%s%s</loc></url>\n'%(SITE,paths[p]) for p in order)+'</urlset>\n')
+open(S+'/sitemap.xml','w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join('<url><loc>%s%s</loc></url>\n'%(SITE,paths[p]) for p in allpages)+'</urlset>\n')
 open(S+'/404.html','w').write(page_html('home').replace('<title>','<title>Page not found | ',1))
 open(R+'/netlify.toml','w').write('''[build]
   publish = "site"
