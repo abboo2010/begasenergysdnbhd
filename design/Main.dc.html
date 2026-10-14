@@ -45,7 +45,7 @@ a{color:inherit;text-decoration:none}
 .nav-links{display:flex;align-items:center;gap:18px;white-space:nowrap;font-size:14px;font-weight:600;color:#D5E0E8}
 .nav-links a{padding:8px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
 .nav-links a:hover,.nav-links a.on{color:#fff;border-bottom-color:#F5A623}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 26px;font-weight:700;font-size:15px;background:#F5A623;color:#071B2B;border:2px solid #F5A623;cursor:pointer;font-family:inherit;transition:background .2s,transform .2s}
+.btn{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 26px;font-weight:700;font-size:15px;background:#F5A623;color:#071B2B;border:2px solid #F5A623;cursor:pointer;font-family:inherit;transition:background .2s,transform .2s}
 .btn:hover{background:#FFB83D;border-color:#FFB83D;transform:translateY(-2px)}
 .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
 .btn-ghost:hover{background:transparent;border-color:#F5A623;color:#fff}
@@ -235,6 +235,10 @@ a{color:inherit;text-decoration:none}
 .gcard li::before{content:"";position:absolute;left:0;top:21px;width:9px;height:2px;background:#F5A623}
 @media (max-width:860px){.grp{grid-template-columns:1fr}}
 
+
+.gcard ul.cols{columns:2;column-gap:36px}
+.gcard ul.cols li{break-inside:avoid}
+@media (max-width:620px){.gcard ul.cols{columns:1}}
 /* hse */
 .hse-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:52px}
 .hcard{padding:30px 28px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-top:3px solid #315B72}
@@ -663,14 +667,16 @@ a{color:inherit;text-decoration:none}
   </section>
   <section class="sec" aria-labelledby="on-h2">
     <div class="wrap">
-      <div class="eyebrow">What we deliver onshore</div>
-      <h2 id="on-h2">Four areas of onshore capability.</h2>
+      <div class="eyebrow">Onshore capabilities</div>
+      <h2 id="on-h2">Fabrication, commissioning, electrical and instrumentation.</h2>
       <div class="grp">
-        <div class="gcard"><h3>Fabrication &amp; structural</h3><ul><li>Onshore fabrication</li><li>Piping and structural repair and modification</li></ul></div>
-        <div class="gcard"><h3>Civil &amp; building maintenance</h3><ul><li>Civil maintenance</li><li>Building maintenance, housekeeping and landscaping</li></ul></div>
-        <div class="gcard"><h3>Electrical &amp; instrumentation</h3><ul><li>Electrical engineering and maintenance</li><li>Electrical construction work</li><li>Switchboard and panel fabrication, installation and commissioning</li><li>PLC-based systems: maintenance and troubleshooting</li><li>Field instrumentation maintenance</li></ul></div>
-        <div class="gcard"><h3>Mechanical &amp; HVAC</h3><ul><li>HVAC operation and maintenance</li><li>Ducting fabrication and installation</li><li>Ducting cleaning and indoor air quality assessment</li><li>Valves maintenance services</li><li>Commissioning of specialist electrical, HVAC and instrumentation systems</li></ul></div>
+        <div class="gcard"><h3>Onshore Fabrication</h3><ul class="cols"><li>Design and Engineering</li><li>Material Procurement</li><li>Fabrication Workshops</li><li>Structural Fabrication</li><li>Piping Fabrication</li><li>Equipment Fabrication</li><li>Quality Assurance</li><li>Modular Construction</li><li>Logistics and Transportation</li><li>Onsite Assembly</li></ul></div>
+        <div class="gcard"><h3>Commissioning of Specialist Electrical, HVAC &amp; Instrumentation Systems</h3><ul class="cols"><li>System Design Review</li><li>Equipment Procurement</li><li>Installation and Wiring</li><li>Power Distribution</li><li>HVAC System Calibration</li><li>Instrumentation Calibration</li><li>Safety Systems Integration</li><li>Testing and Validation</li><li>Documentation and As-Built Drawings</li><li>Training and Handover</li></ul></div>
+        <div class="gcard"><h3>Electrical Engineering &amp; Maintenance</h3><ul class="cols"><li>Design and Planning</li><li>Power Distribution Systems</li><li>Electrical Control Systems</li><li>Instrumentation and Measurement</li><li>Lighting Systems</li><li>Emergency Power Systems</li><li>Energy Management Systems</li><li>Preventive Maintenance Programs</li><li>Troubleshooting and Diagnostics</li><li>Safety Compliance</li></ul></div>
+        <div class="gcard"><h3>Electrical Construction Work</h3><ul class="cols"><li>Installation of Electrical Systems</li><li>Wiring and Cabling</li><li>Panel Board Installation</li><li>Switchgear Installation</li><li>Electrical Equipment Installation</li><li>Grounding and Bonding</li><li>Lighting Fixture Installation</li><li>Testing and Commissioning</li><li>As-Built Documentation</li><li>Project Management</li></ul></div>
+        <div class="gcard"><h3>Field Instrumentation Maintenance</h3><ul class="cols"><li>Routine Inspections</li><li>Calibration and Adjustment</li><li>Preventive Maintenance</li><li>Diagnostic Checks</li><li>Instrument Loop Checks</li><li>Environmental Protection</li><li>Emergency Repairs</li><li>Documentation and Record-Keeping</li><li>Upgrades and Retrofits</li><li>Collaboration with Operations</li></ul></div>
       </div>
+      <a class="link-arrow" href="#" onClick="{{g.services}}">See full service descriptions <span aria-hidden="true">→</span></a>
     </div>
   </section>
   <section class="cta" aria-labelledby="on-cta">
@@ -695,14 +701,17 @@ a{color:inherit;text-decoration:none}
   </section>
   <section class="sec" aria-labelledby="off-h2">
     <div class="wrap">
-      <div class="eyebrow">What we deliver offshore</div>
-      <h2 id="off-h2">Three areas of offshore capability.</h2>
+      <div class="eyebrow">Offshore capabilities</div>
+      <h2 id="off-h2">Construction, installation, maintenance and marine support.</h2>
       <div class="grp">
-        <div class="gcard off"><h3>Construction &amp; installation</h3><ul><li>Offshore construction</li><li>Transportation and installation of offshore facilities</li></ul></div>
-        <div class="gcard off"><h3>Maintenance &amp; repair</h3><ul><li>Maintenance and repairs of offshore facilities</li><li>Piping and structural repair and modification</li></ul></div>
-        <div class="gcard off"><h3>Marine, transport &amp; communications</h3><ul><li>Marine transportation and support services</li><li>Vessel cleaning services</li><li>VSAT data transmission: troubleshooting and maintenance</li></ul></div>
-        <div class="gcard off"><h3>Workforce support</h3><ul><li>Manpower supply, skilled and non-skilled</li></ul></div>
+        <div class="gcard off"><h3>Offshore Construction</h3><ul class="cols"><li>Platform Installation</li><li>Subsea Pipelines</li><li>Topside Modifications</li><li>Living Quarters Installation</li><li>Jacket Fabrication and Installation</li><li>Bridge and Flare Installation</li><li>Riser Systems Installation</li><li>Mooring System Deployment</li><li>Offshore Wind Farm Construction</li><li>Underwater Surveys and Inspections</li></ul></div>
+        <div class="gcard off"><h3>Maintenance and Repairs of Offshore Facilities</h3><ul class="cols"><li>Routine Inspections</li><li>Corrosion Protection</li><li>Structural Integrity Assessments</li><li>Equipment Maintenance</li><li>Pipeline Repairs</li><li>Emergency Response Planning</li><li>Underwater Welding and Repairs</li><li>Replacement of Aging Infrastructure</li><li>Environmental Compliance</li><li>Documentation and Reporting</li></ul></div>
+        <div class="gcard off"><h3>Transportation &amp; Installation of Offshore Facilities</h3><ul class="cols"><li>Logistics and Planning</li><li>Marine Transportation</li><li>Heavy Lift Operations</li><li>Installation Vessels</li><li>Subsea Infrastructure Installation</li><li>Platform Installation</li><li>Mooring Systems</li><li>Dismantling and Decommissioning</li><li>Weather and Wave Analysis</li><li>Quality Assurance and Inspection</li></ul></div>
+        <div class="gcard off"><h3>Instrumentation/Control Engineering &amp; Maintenance</h3><ul class="cols"><li>Control System Design</li><li>Instrumentation Installation</li><li>SCADA Systems</li><li>PLC Programming</li><li>Emergency Shutdown Systems (ESD)</li><li>Calibration and Testing</li><li>Preventive Maintenance</li><li>Cybersecurity Measures</li><li>Hazardous Area Classification</li><li>Training Programs</li></ul></div>
+        <div class="gcard off"><h3>Marine Transportation &amp; Support Services</h3><ul class="cols"><li>Logistics Planning</li><li>Vessel Chartering</li><li>Cargo Loading and Unloading</li><li>Route Optimization</li><li>Customs Clearance</li><li>Safety and Security</li><li>Emergency Response Planning</li><li>Crew Management</li><li>Vessel Maintenance</li><li>Environmental Compliance</li></ul></div>
+        <div class="gcard off"><h3>Vessel Cleaning Services</h3><ul class="cols"><li>Hull Cleaning</li><li>Tank Cleaning</li><li>Cargo Hold Cleaning</li><li>Fuel Tank Cleaning</li><li>Decontamination Services</li><li>Bilge Cleaning</li><li>Underwater Cleaning</li><li>Waste Management</li><li>Inspections and Surveys</li><li>Compliance with Regulations</li></ul></div>
       </div>
+      <a class="link-arrow" href="#" onClick="{{g.services}}">See full service descriptions <span aria-hidden="true">→</span></a>
     </div>
   </section>
   <section class="cta" aria-labelledby="off-cta">
