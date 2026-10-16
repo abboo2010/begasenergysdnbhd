@@ -142,6 +142,7 @@ S=R+'/site'
 shutil.rmtree(S,ignore_errors=True)
 os.makedirs(S+'/assets')
 shutil.copy(R+'/assets/begas-logo.png',S+'/assets/')
+shutil.copytree(R+'/assets/images',S+'/assets/images')
 for f in os.listdir(R+'/assets/favicon'): shutil.copy(R+'/assets/favicon/'+f,S+'/'+f)
 open(S+'/assets/site.css','w').write(css)
 open(S+'/assets/site.js','w').write(js)
