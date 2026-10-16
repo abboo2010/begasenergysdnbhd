@@ -92,7 +92,8 @@ a{color:inherit;text-decoration:none}
 .about{display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:center}
 .about p{margin:22px 0 0;font-size:18px;line-height:1.65;color:#2B4153}
 .photo{position:relative;min-height:440px;background:linear-gradient(135deg,#123B56,#071B2B);overflow:hidden}
-.photo::before,.portrait::before,.xi::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.05) 0 2px,transparent 2px 22px)}
+.photo-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:88% 35%}
+.portrait::before,.xi::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.05) 0 2px,transparent 2px 22px)}
 .photo .ph-chip{position:absolute;top:16px;left:16px;z-index:2}
 .vision{position:absolute;left:0;right:0;bottom:0;background:#071B2B;color:#fff;padding:26px 28px;border-top:3px solid #F5A623}
 .vision small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:#F5A623}
