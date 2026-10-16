@@ -128,12 +128,12 @@ a{color:inherit;text-decoration:none}
 
 /* split */
 .split{display:grid;grid-template-columns:1fr 1fr}
-.pane{position:relative;min-height:560px;padding:96px 56px 72px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.pane{position:relative;min-height:560px;padding:72px 56px 72px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
 .pane::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:linear-gradient(0deg,transparent,#000);mask-image:linear-gradient(0deg,transparent,#000)}
 .pane > *{position:relative}
 .pane .ph-chip{position:absolute;top:16px;left:16px}
-.pane > .pane-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:72% 40%}
-.pane > .pane-shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,27,43,.96) 0%,rgba(7,27,43,.88) 40%,rgba(7,27,43,.55) 70%,rgba(7,27,43,.1) 100%)}
+.pane > .pane-fig{margin:0 0 30px;width:min(100%,380px);aspect-ratio:16/9;border-top:4px solid #F5A623;overflow:hidden;background:#071B2B;box-shadow:0 14px 34px rgba(0,0,0,.35)}
+.pane-fig img{display:block;width:100%;height:100%;object-fit:cover}
 .pane-on{background:linear-gradient(160deg,#315B72,#123B56)}
 .pane-off{background:linear-gradient(160deg,#0A2740,#04121D);border-top:6px solid #F5A623}
 .pane h2{margin:14px 0 18px;font-size:clamp(34px,4vw,56px);line-height:1;font-weight:800;letter-spacing:-.02em;color:#fff}
@@ -427,8 +427,7 @@ a{color:inherit;text-decoration:none}
 
   <section class="split" aria-label="Onshore and offshore operations">
     <div class="pane pane-on">
-      <img class="pane-img" src="/assets/images/onshore-fabrication.jpg" width="1400" height="788" alt="Crew working beside a pipe-rack module lifted by crane in an onshore fabrication yard at sunset" loading="lazy" decoding="async">
-      <div class="pane-shade" aria-hidden="true"></div>
+      <figure class="pane-fig"><img src="/assets/images/onshore-fabrication.jpg" width="800" height="450" alt="Crew working beside a pipe-rack module lifted by crane in an onshore fabrication yard at sunset" loading="lazy" decoding="async"></figure>
       <div class="eyebrow">Operating environment 01</div>
       <h2>Onshore<br>Operations</h2>
       <p>Practical engineering and maintenance solutions designed to support industrial facility reliability, construction activities and operational continuity.</p>
