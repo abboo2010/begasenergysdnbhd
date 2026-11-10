@@ -91,6 +91,8 @@ extra_css='''
 .err{display:block}
 .err[hidden]{display:none}
 .sent[hidden]{display:none}
+.sent{text-align:center}
+.sent img{margin:0 auto 20px !important}
 main:focus{outline:none}
 '''
 css=css+extra_css
