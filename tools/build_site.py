@@ -38,6 +38,7 @@ contact_form='''
     <div class="eyebrow">Request an enquiry</div>
     <h2 id="ct-h2" style="margin-bottom:36px">Send us your enquiry.</h2>
     <div class="sent" id="form-sent" role="status" tabindex="-1" hidden>
+      <img src="/assets/begas-logo.png" alt="BEGAS Energy Sdn Bhd" width="104" height="69" style="display:block;margin:0 0 20px">
       <h3>Thank you. Your enquiry has been sent.</h3>
       <p>The BEGAS team will respond as soon as possible. For anything urgent, email info@begasenergy.com.</p>
       <button class="btn btn-dark" type="button" id="form-again">Send another enquiry</button>
