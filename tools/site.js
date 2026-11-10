@@ -100,7 +100,7 @@
       var body = new URLSearchParams(new FormData(form)).toString();
       fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
         .then(function (r) { if (!r.ok) throw new Error(); form.hidden = true; sent.hidden = false; sent.focus(); form.reset(); })
-        .catch(function () { err('message', 'Sorry, the enquiry could not be sent. Please email admin@begasenergy.com.'); })
+        .catch(function () { err('message', 'Sorry, the enquiry could not be sent. Please email info@begasenergy.com.'); })
         .then(function () { btn.disabled = false; });
     });
     var again = document.getElementById('form-again');
