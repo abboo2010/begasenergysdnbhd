@@ -7,7 +7,7 @@
 - `tools/`: script that regenerates `site/` from the design
 
 ## Deploying
-Netlify: connect this repo, no build command needed. The enquiry form uses Netlify Forms (honeypot spam protection); enable form notifications to info@begasenergy.com in the Netlify dashboard.
+Netlify: connect this repo, no build command needed. The enquiry form uses Netlify Forms (honeypot spam protection); enable form notifications to admin@begasenergy.com in the Netlify dashboard.
 Each page also exists as its own folder (`/about/`, `/services/` ...), so it can be copied to any host, including cloudaccess.net, but the form then needs a different handler.
 
 ## Information still required from BEGAS

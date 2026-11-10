@@ -14,7 +14,7 @@
 
 ## Deployment checklist
 1. Netlify: Add new site > Import from Git > `begasenergysdnbhd`, no build command, publish folder `site` (already set in `netlify.toml`).
-2. Netlify > Forms: confirm the `enquiry` form appears, add an email notification to info@begasenergy.com, send a test enquiry.
+2. Netlify > Forms: confirm the `enquiry` form appears, add an email notification to admin@begasenergy.com, send a test enquiry.
 3. Replace placeholders with real content: photos, certifications and HSE documents, case studies, team photos, privacy policy confirmations (retention, data contact, legal review).
 4. Confirm with BEGAS: services listed are all delivered; "most dependable manpower agency in Malaysia" claim; team and leadership wording.
 5. Domain: add begasenergy.com in Netlify and update DNS at the registrar (or cloudaccess.net), enable HTTPS.
